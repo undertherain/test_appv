@@ -34,7 +34,7 @@ install:
   - "python -m pip install --upgrade h5py"
 
 build_script:
-  - "type skip"
+  - "ls ."
 
 test_script:
   # - "%CMD_IN_ENV% python -m unittest discover"
