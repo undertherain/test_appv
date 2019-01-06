@@ -3,9 +3,6 @@ environment:
     CMD_IN_ENV: "cmd /E:ON /V:ON /C .\\appveyor\\run_with_env.cmd"
 
   matrix:
-#    - PYTHON: "C:\\Python35"
-#      PYTHON_VERSION: "3.5.0"
-#      PYTHON_ARCH: "32"
 
     - PYTHON: "C:\\Python35-x64"
       PYTHON_VERSION: "3.6.x"
@@ -39,12 +36,14 @@ build_script:
 
 test_script:
   # - "%CMD_IN_ENV% python -m unittest discover"
-  - "ls ."
-  - "python main.py"
-  - "%CMD_IN_ENV% python main.py"
+  - "%CMD_IN_ENV% python -m coverage run --branch --source . -m unittest discover --verbose"
+  # - "%CMD_IN_ENV% python -m coverage run --source . setup.py test"
 
 after_test:
-  - ps: "ls ."
+  - "%CMD_IN_ENV% python setup.py bdist_wheel"
+  # - "%CMD_IN_ENV% python setup.py bdist_wininst"
+  # - "%CMD_IN_ENV% python setup.py bdist_msi"
+  - ps: "ls dist"
 
 notifications:
   - provider: Webhook
