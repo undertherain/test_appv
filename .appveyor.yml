@@ -33,8 +33,8 @@ install:
   - "python -m pip install --upgrade cython"
   - "python -m pip install --upgrade h5py"
 
-#build_script:
-#  - "%CMD_IN_ENV% python setup.py build"
+build_script:
+  - "%CMD_IN_ENV% type skip"
 
 test_script:
   # - "%CMD_IN_ENV% python -m unittest discover"
