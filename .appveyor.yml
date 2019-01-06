@@ -2,6 +2,7 @@ environment:
   #HDF5_VERSION: "1.8.17"
   #TOX_TESTENV_PASSENV: "HDF5_DIR"
   global:
+    BUILDWHEEL: "True" # trigger setup.py to include zlib.dll
     CMD_IN_ENV: "cmd /E:ON /V:ON /C .\\appveyor\\run_with_env.cmd"
 
   matrix:
