@@ -17,5 +17,5 @@ from ._version import VERSION
 
 __version__ = VERSION
 
-print("this is init")
-import h5py
+#print("this is init")
+#import h5py
