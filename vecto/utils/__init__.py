@@ -1,2 +1,0 @@
-"""Helpers for various things
-"""
