@@ -35,7 +35,8 @@ install:
   - "python -m pip install --upgrade cython"
   # - "python -m pip install -r test_requirements.txt"
   - "python -m pip install --upgrade h5py"
-  - "python -m pip install --upgrade tables"
+  # - "python -m pip install --upgrade tables"
+  - conda install pytables -c conda-forge
 
 build_script:
   - "ls"
