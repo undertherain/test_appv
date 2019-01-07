@@ -1,3 +1,3 @@
 import h5py
-import pytables
+import tables
 print("hi")
